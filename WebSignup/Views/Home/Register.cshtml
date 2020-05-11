@@ -1,0 +1,140 @@
+﻿@{
+    ViewBag.Title = "Registration Page";
+}
+    <script type="text/javascript"> 
+        function myFunction() {
+            var x=document.getElementById("exampleInputPassword1");
+            if (x.type==="password" ) {
+            x.type="text" ;
+            } else {
+            x.type="password" ;
+            }
+        }
+
+        function SignupUser() {
+            // Call Web API to get a list of Product
+            $.ajax({
+                url: '/api/Registration/Signup',
+                type: 'POST',
+                dataType: 'json',
+                success: function () {
+                    
+                },
+                error: function (request, message, error) {
+                    handleException(request, message, error);
+                }
+            });
+        }
+        function handleException(request, message,
+            error) {
+            var msg = "";
+            msg += "Code: " + request.status + "\n";
+            msg += "Text: " + request.statusText + "\n";
+            if (request.responseJSON != null) {
+                msg += "Message" +
+                    request.responseJSON.Message + "\n";
+            }
+            alert(msg);
+        }
+        </script>
+<div class="jumbotron">
+    <h1>Enrollment Application</h1>
+
+</div>
+
+<div class="row">
+    @if (WebSignup.Controllers.HomeController.RegistrationStep == 1)
+    {
+
+        <div class="col-md-4">
+            <h2>Register</h2>
+            <form>
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Email address</label>
+                    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+                    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputPassword1">Password</label>
+                    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                    <input type="checkbox" onclick="myFunction()">
+                    <label>Show Password</label>
+                </div>
+                <div class="form-group">
+
+                </div>
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+        </div>
+        <div class="col-md-4">&nbsp;</div>
+        <div class="col-md-4">&nbsp;</div>
+
+    }
+    @if (WebSignup.Controllers.HomeController.RegistrationStep == 2)
+    {
+        <div class="col-md-4">
+            <h2>Login</h2>
+            <form>
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Email address</label>
+                    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputPassword1">Password</label>
+                    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                    <input type="checkbox" onclick="myFunction()">
+                    <label>Show Password</label>
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputPassword1">Verification Code</label>
+                    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="text">
+                    <small id="emailHelp" class="form-text text-muted">Enter the verification code sent to your email address.</small>
+
+                </div>
+                <div class="form-group">
+
+                </div>
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+        </div>
+    }
+    @if (WebSignup.Controllers.HomeController.RegistrationStep == 3)
+    {
+        <div class="col-md-4">
+            <h2>Complete Registration</h2>
+            <form>
+
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Full Name</label>
+                    <input type="email" class="form-control" id="fullName" aria-describedby="emailHelp" placeholder="Enter Full Name">
+
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Contact Phone Number</label>
+                    <input type="email" class="form-control" id="PhoneNumber" aria-describedby="emailHelp" placeholder="Enter Phone Number">
+
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Address</label>
+                    <input type="email" class="form-control" id="Address" aria-describedby="emailHelp" placeholder="Enter Address">
+
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Preferences</label>
+                    <ul class="list-group">
+                        <li class="list-group-item"><input type="checkbox"> Promotions</li>
+                        <li class="list-group-item"><input type="checkbox"> Events</li>
+                        <li class="list-group-item"><input type="checkbox"> Misc</li>
+                        <li class="list-group-item"><input type="checkbox"> Others</li>
+                    </ul>
+
+
+                </div>
+
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+        </div>
+    }
+    </div>
+    

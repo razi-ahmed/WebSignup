@@ -5,6 +5,8 @@ VisualStudioVersion = 16.0.30011.22
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebSignup", "WebSignup\WebSignup.csproj", "{2A011915-E97D-45BE-B5F1-A3ABE76CDF1E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebSignupApi", "WebSignupApi\WebSignupApi.csproj", "{5657CCEE-873D-4CE0-97E8-E9898704D376}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{2A011915-E97D-45BE-B5F1-A3ABE76CDF1E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2A011915-E97D-45BE-B5F1-A3ABE76CDF1E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2A011915-E97D-45BE-B5F1-A3ABE76CDF1E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5657CCEE-873D-4CE0-97E8-E9898704D376}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5657CCEE-873D-4CE0-97E8-E9898704D376}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5657CCEE-873D-4CE0-97E8-E9898704D376}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5657CCEE-873D-4CE0-97E8-E9898704D376}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
